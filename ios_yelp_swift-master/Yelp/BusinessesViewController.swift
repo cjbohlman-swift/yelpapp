@@ -13,6 +13,8 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     var businesses: [Business]!
     
     @IBOutlet weak var tableView: UITableView!
+    var searchBar = UISearchBar()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,6 +46,16 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
                  }
          }
          */
+        
+        // create the search bar programatically since you won't be
+        // able to drag one onto the navigation bar
+        //searchBar.sizeToFit()
+        
+        // the UIViewController comes with a navigationItem property
+        // this will automatically be initialized for you if when the
+        // view controller is added to a navigation controller's stack
+        // you just need to set the titleView to be the search bar
+        navigationItem.titleView = searchBar
         
     }
     
